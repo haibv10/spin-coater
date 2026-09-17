@@ -1,0 +1,52 @@
+# Keil MDK-ARM
+MDK-ARM/Objects/
+MDK-ARM/Listings/
+*.uvguix.*
+*.uvoptx
+*.iex
+*.axf
+*.htm
+*.lnp
+*.sct
+*.dep
+*.build_log.htm
+
+# Compiled Object files
+*.o
+*.obj
+*.elf
+*.hex
+*.bin
+*.map
+
+# Debug files
+*.dbg
+*.pdbs
+*.lst
+
+# Backup files
+*.bak
+*.old
+*~
+
+# Logs
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build output
+build/
+dist/
+output/
+
+# # Folder 
+# .Drivers/
