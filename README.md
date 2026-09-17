@@ -80,19 +80,7 @@ ticks (20 ms → 50 Hz servo frame). Duty is expressed in timer ticks:
 
 ## 3. Software Architecture
 
-```
-┌────────────────────────────┐          UART @ 115200          ┌────────────────────────────┐
-│         ESP32-S3            │      (framed, CRC-16 Modbus)    │        STM32F103C8          │
-│           (HMI)             │ ─────────── commands ─────────▶ │        (Controller)         │
-│                             │ ◀───────── measured RPM ─────── │                             │
-│  LVGL UI (SquareLine)       │                                 │  app_loop():                │
-│  EC11 rotary encoder        │                                 │   • uart_parser_from_esp    │
-│  App_Control state machine  │                                 │   • mode_ramp_update (FSM)  │
-│  FrameIO (frame encode/dec) │                                 │   • coater_update (PID)     │
-│                             │                                 │   • io_buzzer_update        │
-│                             │                                 │   • uart_send_measure_rpm   │
-└────────────────────────────┘                                 └────────────────────────────┘
-```
+![System architecture](img/system-architecture.svg)
 
 ### STM32 side (`stm32f103c8/`)
 

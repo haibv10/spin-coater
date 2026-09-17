@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1120" viewBox="0 0 800 1120" role="img" aria-labelledby="title description">
+  <title id="title">Spin Coater system architecture</title>
+  <desc id="description">Four vertical blocks show the end user, ESP32-S3 host, STM32F103C8 controller, and spin coater hardware. The end user operates the host; the host and controller exchange UART data; the controller drives the hardware and receives encoder feedback.</desc>
+  <style>
+    text { font-family: Arial, Helvetica, sans-serif; fill: #151515; }
+    .title { font-size: 29px; font-weight: 700; }
+    .heading { font-size: 21px; font-weight: 700; }
+    .body { font-size: 17px; }
+    .link { font-size: 15px; font-weight: 700; }
+  </style>
+  <rect width="800" height="1120" fill="#ffffff"/>
+  <rect x="1" y="1" width="798" height="1118" fill="none" stroke="#222222" stroke-width="2"/>
+  <text x="400" y="59" text-anchor="middle" class="title">SYSTEM ARCHITECTURE</text>
+  <path d="M1 83 H799" stroke="#222222" stroke-width="2"/>
+
+  <rect x="120" y="120" width="560" height="118" fill="#ffffff" stroke="#222222" stroke-width="2"/>
+  <path d="M120 173 H680" stroke="#222222" stroke-width="2"/>
+  <text x="400" y="156" text-anchor="middle" class="heading">END USER</text>
+  <text x="145" y="199" class="body">- Select mode and enter setpoints</text>
+  <text x="145" y="226" class="body">- Start, stop, and monitor the process</text>
+  <path d="M400 238 V304" fill="none" stroke="#222222" stroke-width="2.5"/>
+  <path d="M400 310 L393 297 H407 Z" fill="#222222"/>
+  <text x="425" y="282" class="link">Touch / EC11</text>
+
+  <rect x="120" y="311" width="560" height="173" fill="#ffffff" stroke="#222222" stroke-width="2"/>
+  <path d="M120 364 H680" stroke="#222222" stroke-width="2"/>
+  <text x="400" y="347" text-anchor="middle" class="heading">HOST (ESP32-S3)</text>
+  <text x="145" y="398" class="body">- Read touchscreen and EC11 input</text>
+  <text x="145" y="429" class="body">- Send commands to the controller</text>
+  <text x="145" y="460" class="body">- Display measured RPM and process state</text>
+  <path d="M365 484 V570" fill="none" stroke="#222222" stroke-width="2.5"/>
+  <path d="M365 576 L358 563 H372 Z" fill="#222222"/>
+  <path d="M435 577 V491" fill="none" stroke="#222222" stroke-width="2.5"/>
+  <path d="M435 485 L428 498 H442 Z" fill="#222222"/>
+  <text x="400" y="537" text-anchor="middle" class="link">UART</text>
+
+  <rect x="120" y="577" width="560" height="173" fill="#ffffff" stroke="#222222" stroke-width="2"/>
+  <path d="M120 630 H680" stroke="#222222" stroke-width="2"/>
+  <text x="400" y="613" text-anchor="middle" class="heading">NODE (STM32)</text>
+  <text x="145" y="664" class="body">- Receive and process UART commands</text>
+  <text x="145" y="695" class="body">- Regulate motor speed with encoder feedback</text>
+  <text x="145" y="726" class="body">- Control ESC, relays, and buzzer</text>
+  <path d="M365 750 V836" fill="none" stroke="#222222" stroke-width="2.5"/>
+  <path d="M365 842 L358 829 H372 Z" fill="#222222"/>
+  <path d="M435 843 V757" fill="none" stroke="#222222" stroke-width="2.5"/>
+  <path d="M435 751 L428 764 H442 Z" fill="#222222"/>
+  <text x="302" y="802" text-anchor="end" class="link">PWM / GPIO</text>
+  <text x="496" y="802" class="link">Encoder</text>
+
+  <rect x="120" y="843" width="560" height="189" fill="#ffffff" stroke="#222222" stroke-width="2"/>
+  <path d="M120 896 H680" stroke="#222222" stroke-width="2"/>
+  <text x="400" y="879" text-anchor="middle" class="heading">SPIN COATER HARDWARE</text>
+  <text x="145" y="930" class="body">- ESC drives the BLDC motor</text>
+  <text x="145" y="961" class="body">- Encoder measures motor speed</text>
+  <text x="145" y="992" class="body">- Vacuum pump, UV LED, and buzzer</text>
+</svg>

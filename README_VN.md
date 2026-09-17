@@ -82,19 +82,7 @@ TIM1 được cấu hình tick 1 MHz (`Prescaler = 24-1` từ 24 MHz) với chu 
 
 ## 3. Kiến trúc phần mềm
 
-```
-┌────────────────────────────┐          UART @ 115200          ┌────────────────────────────┐
-│         ESP32-S3            │       (đóng khung, CRC-16)      │        STM32F103C8          │
-│           (HMI)             │ ─────────── lệnh ─────────────▶ │      (Bộ điều khiển)        │
-│                             │ ◀────────── RPM đo được ─────── │                             │
-│  Giao diện LVGL (SquareLine)│                                 │  app_loop():                │
-│  Encoder xoay EC11          │                                 │   • uart_parser_from_esp    │
-│  Máy trạng thái App_Control │                                 │   • mode_ramp_update (FSM)  │
-│  FrameIO (mã hoá/giải khung)│                                 │   • coater_update (PID)     │
-│                             │                                 │   • io_buzzer_update        │
-│                             │                                 │   • uart_send_measure_rpm   │
-└────────────────────────────┘                                 └────────────────────────────┘
-```
+![Sơ đồ kiến trúc hệ thống](img/system-architecture.svg)
 
 ### Phía STM32 (`stm32f103c8/`)
 
